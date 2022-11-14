@@ -8,6 +8,7 @@ const App = () => {
     <>
       <Home />
       <Sidebar />
+      <Modal />
     </>
   );
 };

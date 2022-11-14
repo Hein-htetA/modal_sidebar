@@ -12,13 +12,15 @@ import logo from "../../logo.svg";
 import ClearIcon from "@mui/icons-material/Clear";
 import { Button } from "@mui/material";
 import { links, social } from "../../data";
+import { useGlobalContext } from "../../MainContext";
 
 const Sidebar = () => {
+  const { isSidebarOpen, closeSidebar } = useGlobalContext();
   return (
-    <SidebarContainer>
+    <SidebarContainer isSidebarOpen={isSidebarOpen}>
       <SidebarHeader>
         <img src={logo} alt="coding addict" />
-        <Button>
+        <Button onClick={closeSidebar}>
           <ClearIcon
             sx={{
               fontSize: "1.5rem",

@@ -1,7 +1,8 @@
 import { Link } from "@mui/material";
 import { Box, styled } from "@mui/system";
 
-export const SidebarContainer = styled(Box)(({ theme }) => ({
+export const SidebarContainer = styled(Box)(({ theme, isSidebarOpen }) => ({
+  position: "fixed",
   display: "flex",
   flexDirection: "column",
   height: "100vh",
@@ -13,6 +14,7 @@ export const SidebarContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("sm")]: {
     maxWidth: "400px",
   },
+  transform: `${isSidebarOpen ? "translate(0)" : "translate(-100%)"}`,
 }));
 
 export const SidebarHeader = styled(Box)({
